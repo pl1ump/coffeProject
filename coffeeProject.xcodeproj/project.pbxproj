@@ -14,6 +14,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F3F460CC2EB3E6AE000069CC /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		F3F460CD2EB3E6FD000069CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3FBBEC42EB3AFB30012FABE /* coffeeProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coffeeProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3FBBEC72EB3AFB30012FABE /* coffeeProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coffeeProjectApp.swift; sourceTree = "<group>"; };
 		F3FBBEC92EB3AFB30012FABE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +34,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F3F460C82EB3E311000069CC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F3F460C92EB3E318000069CC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F3F460CA2EB3E31D000069CC /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F3F460CB2EB3E323000069CC /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
 		F3FBBEBB2EB3AFB30012FABE = {
 			isa = PBXGroup;
 			children = (
@@ -51,10 +81,16 @@
 		F3FBBEC62EB3AFB30012FABE /* coffeeProject */ = {
 			isa = PBXGroup;
 			children = (
+				F3F460CB2EB3E323000069CC /* NetworkManager */,
+				F3F460C82EB3E311000069CC /* Model */,
+				F3F460C92EB3E318000069CC /* ViewModel */,
+				F3F460CA2EB3E31D000069CC /* View */,
 				F3FBBEC72EB3AFB30012FABE /* coffeeProjectApp.swift */,
 				F3FBBEC92EB3AFB30012FABE /* ContentView.swift */,
 				F3FBBECB2EB3AFB40012FABE /* Assets.xcassets */,
 				F3FBBECD2EB3AFB40012FABE /* Preview Content */,
+				F3F460CC2EB3E6AE000069CC /* Config.xcconfig */,
+				F3F460CD2EB3E6FD000069CC /* Info.plist */,
 			);
 			path = coffeeProject;
 			sourceTree = "<group>";
@@ -147,6 +183,7 @@
 /* Begin XCBuildConfiguration section */
 		F3FBBED02EB3AFB40012FABE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3F460CC2EB3E6AE000069CC /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -210,6 +247,7 @@
 		};
 		F3FBBED12EB3AFB40012FABE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3F460CC2EB3E6AE000069CC /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -266,6 +304,7 @@
 		};
 		F3FBBED32EB3AFB40012FABE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3F460CC2EB3E6AE000069CC /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -275,6 +314,7 @@
 				DEVELOPMENT_TEAM = 3VS5PSVZBG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = /Users/vladick/Desktop/nayka/coffeeProject/coffeeProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -295,6 +335,7 @@
 		};
 		F3FBBED42EB3AFB40012FABE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3F460CC2EB3E6AE000069CC /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -304,6 +345,7 @@
 				DEVELOPMENT_TEAM = 3VS5PSVZBG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = /Users/vladick/Desktop/nayka/coffeeProject/coffeeProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
