@@ -11,6 +11,10 @@
 		F3F460D22EB6995F000069CC /* YelpNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F460D12EB6995F000069CC /* YelpNetworkManager.swift */; };
 		F3F460D42EB69B82000069CC /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F460D32EB69B82000069CC /* NetworkError.swift */; };
 		F3F460D62EB69CEC000069CC /* APIErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F460D52EB69CEC000069CC /* APIErrorResponse.swift */; };
+		F3F460D82EB7B6AC000069CC /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F460D72EB7B6AC000069CC /* MapViewModel.swift */; };
+		F3F460DB2EB7BA04000069CC /* MapViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F460DA2EB7BA04000069CC /* MapViewModelProtocol.swift */; };
+		F3F460DD2EB7BF98000069CC /* MapSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F460DC2EB7BF98000069CC /* MapSearchView.swift */; };
+		F3F460DF2EB7BFC8000069CC /* FiltersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F460DE2EB7BFC8000069CC /* FiltersView.swift */; };
 		F3FBBEC82EB3AFB30012FABE /* coffeeProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FBBEC72EB3AFB30012FABE /* coffeeProjectApp.swift */; };
 		F3FBBECA2EB3AFB30012FABE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FBBEC92EB3AFB30012FABE /* ContentView.swift */; };
 		F3FBBECC2EB3AFB40012FABE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3FBBECB2EB3AFB40012FABE /* Assets.xcassets */; };
@@ -24,6 +28,10 @@
 		F3F460D12EB6995F000069CC /* YelpNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpNetworkManager.swift; sourceTree = "<group>"; };
 		F3F460D32EB69B82000069CC /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		F3F460D52EB69CEC000069CC /* APIErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorResponse.swift; sourceTree = "<group>"; };
+		F3F460D72EB7B6AC000069CC /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		F3F460DA2EB7BA04000069CC /* MapViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModelProtocol.swift; sourceTree = "<group>"; };
+		F3F460DC2EB7BF98000069CC /* MapSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchView.swift; sourceTree = "<group>"; };
+		F3F460DE2EB7BFC8000069CC /* FiltersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersView.swift; sourceTree = "<group>"; };
 		F3FBBEC42EB3AFB30012FABE /* coffeeProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coffeeProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3FBBEC72EB3AFB30012FABE /* coffeeProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coffeeProjectApp.swift; sourceTree = "<group>"; };
 		F3FBBEC92EB3AFB30012FABE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +61,8 @@
 		F3F460C92EB3E318000069CC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				F3F460D92EB7B9EF000069CC /* Protocols */,
+				F3F460D72EB7B6AC000069CC /* MapViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -60,6 +70,8 @@
 		F3F460CA2EB3E31D000069CC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F3F460DC2EB7BF98000069CC /* MapSearchView.swift */,
+				F3F460DE2EB7BFC8000069CC /* FiltersView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -72,6 +84,14 @@
 				F3F460D52EB69CEC000069CC /* APIErrorResponse.swift */,
 			);
 			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		F3F460D92EB7B9EF000069CC /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F3F460DA2EB7BA04000069CC /* MapViewModelProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		F3FBBEBB2EB3AFB30012FABE = {
@@ -186,9 +206,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3F460D02EB6976D000069CC /* appModel.swift in Sources */,
+				F3F460DB2EB7BA04000069CC /* MapViewModelProtocol.swift in Sources */,
+				F3F460DD2EB7BF98000069CC /* MapSearchView.swift in Sources */,
 				F3FBBECA2EB3AFB30012FABE /* ContentView.swift in Sources */,
+				F3F460DF2EB7BFC8000069CC /* FiltersView.swift in Sources */,
 				F3F460D62EB69CEC000069CC /* APIErrorResponse.swift in Sources */,
 				F3F460D22EB6995F000069CC /* YelpNetworkManager.swift in Sources */,
+				F3F460D82EB7B6AC000069CC /* MapViewModel.swift in Sources */,
 				F3FBBEC82EB3AFB30012FABE /* coffeeProjectApp.swift in Sources */,
 				F3F460D42EB69B82000069CC /* NetworkError.swift in Sources */,
 			);

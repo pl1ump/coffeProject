@@ -61,3 +61,9 @@ struct Location: Decodable {
     }
 }
 
+// MARK: - Alert
+struct AlertWrapper: Identifiable {
+    let id = UUID()
+    let title: String
+    let message: String
+}
