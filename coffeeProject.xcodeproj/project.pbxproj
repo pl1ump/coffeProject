@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F3F460D02EB6976D000069CC /* appModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F460CF2EB6976D000069CC /* appModel.swift */; };
+		F3F460D22EB6995F000069CC /* YelpNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F460D12EB6995F000069CC /* YelpNetworkManager.swift */; };
+		F3F460D42EB69B82000069CC /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F460D32EB69B82000069CC /* NetworkError.swift */; };
+		F3F460D62EB69CEC000069CC /* APIErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F460D52EB69CEC000069CC /* APIErrorResponse.swift */; };
 		F3FBBEC82EB3AFB30012FABE /* coffeeProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FBBEC72EB3AFB30012FABE /* coffeeProjectApp.swift */; };
 		F3FBBECA2EB3AFB30012FABE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FBBEC92EB3AFB30012FABE /* ContentView.swift */; };
 		F3FBBECC2EB3AFB40012FABE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3FBBECB2EB3AFB40012FABE /* Assets.xcassets */; };
@@ -16,6 +20,10 @@
 /* Begin PBXFileReference section */
 		F3F460CC2EB3E6AE000069CC /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		F3F460CD2EB3E6FD000069CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3F460CF2EB6976D000069CC /* appModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appModel.swift; sourceTree = "<group>"; };
+		F3F460D12EB6995F000069CC /* YelpNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpNetworkManager.swift; sourceTree = "<group>"; };
+		F3F460D32EB69B82000069CC /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		F3F460D52EB69CEC000069CC /* APIErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorResponse.swift; sourceTree = "<group>"; };
 		F3FBBEC42EB3AFB30012FABE /* coffeeProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coffeeProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3FBBEC72EB3AFB30012FABE /* coffeeProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coffeeProjectApp.swift; sourceTree = "<group>"; };
 		F3FBBEC92EB3AFB30012FABE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -37,6 +45,7 @@
 		F3F460C82EB3E311000069CC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F3F460CF2EB6976D000069CC /* appModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -58,6 +67,9 @@
 		F3F460CB2EB3E323000069CC /* NetworkManager */ = {
 			isa = PBXGroup;
 			children = (
+				F3F460D12EB6995F000069CC /* YelpNetworkManager.swift */,
+				F3F460D32EB69B82000069CC /* NetworkError.swift */,
+				F3F460D52EB69CEC000069CC /* APIErrorResponse.swift */,
 			);
 			path = NetworkManager;
 			sourceTree = "<group>";
@@ -173,8 +185,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3F460D02EB6976D000069CC /* appModel.swift in Sources */,
 				F3FBBECA2EB3AFB30012FABE /* ContentView.swift in Sources */,
+				F3F460D62EB69CEC000069CC /* APIErrorResponse.swift in Sources */,
+				F3F460D22EB6995F000069CC /* YelpNetworkManager.swift in Sources */,
 				F3FBBEC82EB3AFB30012FABE /* coffeeProjectApp.swift in Sources */,
+				F3F460D42EB69B82000069CC /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
