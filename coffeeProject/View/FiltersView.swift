@@ -16,6 +16,10 @@ struct FiltersView: View {
             Text("\(searchRadius) meters")
                 .font(.headline)
             
+            
+            Button("Apply") {
+                
+            }
             Spacer()
         }
         .padding()

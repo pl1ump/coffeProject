@@ -12,6 +12,7 @@ final class MapViewModel: NSObject, MapViewModelProtocol {
     @Published var errorMessage: String?
     @Published var searchRadius: Int = 1500
     @Published var alertWrapper: AlertWrapper? = nil
+    @Published var selectedShop: Business?
 
     // MARK: - Dependencies
     private let service: YelpNetworkManager
@@ -86,15 +87,15 @@ extension MapViewModel: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard userLocation == nil else { return }
 
-        if let location = locations.last {
-            let coordinate = location.coordinate
-            userLocation = coordinate
+               if let location = locations.last {
+                   let coordinate = location.coordinate
+                   userLocation = coordinate
 
-            region = MKCoordinateRegion(
-                center: coordinate,
-                span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
-            )
-        }
+                   region = MKCoordinateRegion(
+                       center: coordinate,
+                       span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+                   )
+               }
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

@@ -1,26 +1,51 @@
 import SwiftUI
 import MapKit
 
-struct MapSearchView: View {
-    @StateObject private var viewModel: MapViewModel
+struct MapSearchView<ViewModel: MapViewModelProtocol>: View {
+    @StateObject private var viewModel: ViewModel
     
     @State private var addressInput: String = ""
     @State private var showFilters = false
+    @State private var previousRadius: Int = 0
+    @State private var showCoffeeList = false
     
-    init() {
-        _viewModel = StateObject(wrappedValue: MapViewModel(service: YelpNetworkManager()))
-    }
+    init(viewModel: ViewModel) {
+            _viewModel = StateObject(wrappedValue: viewModel)
+        }
     
     var body: some View {
         ZStack(alignment: .top) {
-           
-            Map(coordinateRegion: $viewModel.region,
-                annotationItems: viewModel.coffeeShops) { shop in
-                MapMarker(coordinate: shop.coordinate, tint: .brown)
+            
+            Map(
+                coordinateRegion: $viewModel.region,
+                showsUserLocation: true,
+                annotationItems: viewModel.coffeeShops
+            ) { shop in
+                MapAnnotation(coordinate: shop.coordinate) {
+                    
+                    
+                    VStack(spacing: 4) {
+                        Text(shop.name)
+                            .font(.caption2)
+                            .padding(4)
+                            .background(Color(.systemBackground).opacity(0.9))
+                            .cornerRadius(6)
+                        
+                        Image(systemName: viewModel.selectedShop?.id == shop.id ? "mappin.circle" : "mappin.circle.fill")
+                            .font(viewModel.selectedShop?.id == shop.id ? .system(size: 42) : .title2)
+                            .foregroundColor(viewModel.selectedShop?.id == shop.id ? .red : .brown)
+                            .scaleEffect(viewModel.selectedShop?.id == shop.id ? 1.3 : 1.0)
+                            .animation(.spring(), value: viewModel.selectedShop?.id == shop.id)
+                            .onTapGesture {
+                                viewModel.selectedShop = shop
+                                showCoffeeList = true
+                            }
+                    }
+                }
             }
             .ignoresSafeArea()
             
-           
+            
             VStack {
                 HStack {
                     TextField("Enter office address…", text: $addressInput)
@@ -48,11 +73,31 @@ struct MapSearchView: View {
                 Spacer()
             }
         }
-        .sheet(isPresented: $showFilters) {
+        .sheet(isPresented: $showFilters, onDismiss: {
+            if viewModel.searchRadius != previousRadius {
+                previousRadius = viewModel.searchRadius
+                Task { await viewModel.loadCoffeeShops() }
+            }
+        }) {
             FiltersView(searchRadius: $viewModel.searchRadius)
         }
         .onAppear {
+            previousRadius = viewModel.searchRadius
             viewModel.requestLocationPermission()
+        }
+        .task {
+            if !viewModel.coffeeShops.isEmpty {
+                showCoffeeList = true
+            }
+        }
+
+        .sheet(isPresented: $showCoffeeList) {
+            ListSheetView(
+                viewModel: viewModel,
+                selectedShop: viewModel.selectedShop
+            )
+            .presentationDetents([.fraction(0.2), .medium, .large])
+            .presentationDragIndicator(.visible)
         }
         .alert(item: $viewModel.alertWrapper) { alert in
             Alert(title: Text(alert.title), message: Text(alert.message))
@@ -62,5 +107,5 @@ struct MapSearchView: View {
 
 
 #Preview {
-    MapSearchView()
+    MapSearchView(viewModel: MapViewModel(service: YelpNetworkManager()))
 }

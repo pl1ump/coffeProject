@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        MapSearchView()
+        MapSearchView(viewModel: MapViewModel(service: YelpNetworkManager()))
     }
 }
 

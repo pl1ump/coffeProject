@@ -11,7 +11,9 @@ protocol MapViewModelProtocol: ObservableObject {
     var errorMessage: String? { get }
     var searchRadius: Int { get set }
     var alertWrapper: AlertWrapper? { get set }
+    var selectedShop: Business? { get set }
 
     func requestLocationPermission()
+    func searchAddress(_ address: String) async
     func loadCoffeeShops() async
 }

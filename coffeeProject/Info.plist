@@ -4,5 +4,7 @@
 <dict>
 	<key>API_KEY_Yelp</key>
 	<string>$(API_KEY_Yelp)</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>We need your location to find nearby coffee shops</string>
 </dict>
 </plist>
