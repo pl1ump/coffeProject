@@ -32,13 +32,15 @@ struct MapSearchView<ViewModel: MapViewModelProtocol>: View {
                             .cornerRadius(6)
                         
                         Image(systemName: viewModel.selectedShop?.id == shop.id ? "mappin.circle" : "mappin.circle.fill")
-                            .font(viewModel.selectedShop?.id == shop.id ? .system(size: 42) : .title2)
+                            .font(viewModel.selectedShop?.id == shop.id ? .system(size: 35) : .title2)
                             .foregroundColor(viewModel.selectedShop?.id == shop.id ? .red : .brown)
                             .scaleEffect(viewModel.selectedShop?.id == shop.id ? 1.3 : 1.0)
                             .animation(.spring(), value: viewModel.selectedShop?.id == shop.id)
                             .onTapGesture {
-                                viewModel.selectedShop = shop
-                                showCoffeeList = true
+                                DispatchQueue.main.async {
+                                    viewModel.selectedShop = shop
+                                    showCoffeeList = true
+                                }
                             }
                     }
                 }
@@ -54,8 +56,8 @@ struct MapSearchView<ViewModel: MapViewModelProtocol>: View {
                         .cornerRadius(12)
                         .shadow(radius: 4)
                         .onSubmit {
-                            Task { await viewModel.searchAddress(addressInput) }
-                        }
+                                Task { await viewModel.searchAddress(addressInput) }
+                            }
                     
                     Button(action: {
                         showFilters.toggle()
@@ -82,8 +84,10 @@ struct MapSearchView<ViewModel: MapViewModelProtocol>: View {
             FiltersView(searchRadius: $viewModel.searchRadius)
         }
         .onAppear {
-            previousRadius = viewModel.searchRadius
-            viewModel.requestLocationPermission()
+            Task {
+                previousRadius = viewModel.searchRadius
+                viewModel.requestLocationPermission()
+            }
         }
         .task {
             if !viewModel.coffeeShops.isEmpty {
@@ -91,7 +95,12 @@ struct MapSearchView<ViewModel: MapViewModelProtocol>: View {
             }
         }
 
-        .sheet(isPresented: $showCoffeeList) {
+        .sheet(isPresented: $showCoffeeList, onDismiss: {
+            withAnimation(.spring()){
+                viewModel.selectedShop = nil
+            }
+            
+        }) {
             ListSheetView(
                 viewModel: viewModel,
                 selectedShop: viewModel.selectedShop

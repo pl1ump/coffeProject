@@ -61,6 +61,9 @@ struct ListSheetView<ViewModel: MapViewModelProtocol>: View {
                             viewModel.selectedShop = shop
                         }
                     }
+                    .refreshable {
+                            await viewModel.loadCoffeeShops()
+                        }
                 }
                 .padding(.top, 8)
             }
