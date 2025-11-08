@@ -23,6 +23,7 @@ struct FiltersView: View {
             Spacer()
         }
         .padding()
+        .padding(.top, 8)
     }
 }
 
