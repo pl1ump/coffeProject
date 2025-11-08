@@ -5,7 +5,7 @@ struct FiltersView: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            Text("Search Radius")
+            Text(LocalizedStringKey("Search Radius"))
                 .font(.title2.bold())
             
             Slider(value: Binding(
@@ -13,16 +13,17 @@ struct FiltersView: View {
                 set: { searchRadius = Int($0) }
             ), in: 200...4000, step: 100)
             
-            Text("\(searchRadius) meters")
+            Text(String(format: NSLocalizedString("%d meters", comment: ""), searchRadius))
                 .font(.headline)
             
             
-            Button("Apply") {
+            Button(LocalizedStringKey("Apply")) {
                 
             }
             Spacer()
         }
         .padding()
+        .padding(.top, 8)
     }
 }
 

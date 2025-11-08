@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F39F50CD2EBE50B900B9C6F3 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F39F50CC2EBE50B900B9C6F3 /* Localizable.xcstrings */; };
 		F3C17E7C2EBA780000E62F6D /* ListSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C17E7B2EBA780000E62F6D /* ListSheetView.swift */; };
 		F3F460D02EB6976D000069CC /* appModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F460CF2EB6976D000069CC /* appModel.swift */; };
 		F3F460D22EB6995F000069CC /* YelpNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F460D12EB6995F000069CC /* YelpNetworkManager.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F39F50CC2EBE50B900B9C6F3 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		F3C17E7B2EBA780000E62F6D /* ListSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSheetView.swift; sourceTree = "<group>"; };
 		F3F460CC2EB3E6AE000069CC /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		F3F460CD2EB3E6FD000069CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				F3FBBECD2EB3AFB40012FABE /* Preview Content */,
 				F3F460CC2EB3E6AE000069CC /* Config.xcconfig */,
 				F3F460CD2EB3E6FD000069CC /* Info.plist */,
+				F39F50CC2EBE50B900B9C6F3 /* Localizable.xcstrings */,
 			);
 			path = coffeeProject;
 			sourceTree = "<group>";
@@ -179,7 +182,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
+				uk,
 			);
 			mainGroup = F3FBBEBB2EB3AFB30012FABE;
 			productRefGroup = F3FBBEC52EB3AFB30012FABE /* Products */;
@@ -198,6 +201,7 @@
 			files = (
 				F3FBBECF2EB3AFB40012FABE /* Preview Assets.xcassets in Resources */,
 				F3FBBECC2EB3AFB40012FABE /* Assets.xcassets in Resources */,
+				F39F50CD2EBE50B900B9C6F3 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
