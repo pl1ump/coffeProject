@@ -31,7 +31,7 @@ struct ListSheetView<ViewModel: MapViewModelProtocol>: View {
                             
                             
                             if let distance = shop.distance {
-                                Text(String(format: "%.0f m away", distance))
+                                Text(String(format: NSLocalizedString("%0.f m away", comment: ""), distance))
                                     .font(.subheadline)
                                     .foregroundColor(.secondary)
                             }
@@ -42,7 +42,7 @@ struct ListSheetView<ViewModel: MapViewModelProtocol>: View {
                                     ForEach(0..<Int(rating), id: \.self) { _ in
                                         Image(systemName: "star.fill").foregroundColor(.yellow)
                                     }
-                                    Text(String(format: "Rating %.1f", rating))
+                                    Text(String(format: NSLocalizedString("Rating %.1f", comment: ""), rating))
                                         .font(.subheadline)
                                     
                                     if let reviews = shop.reviewCount {

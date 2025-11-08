@@ -50,7 +50,7 @@ struct MapSearchView<ViewModel: MapViewModelProtocol>: View {
             
             VStack {
                 HStack {
-                    TextField("Enter office address…", text: $addressInput)
+                    TextField(LocalizedStringKey("Enter office address…"), text: $addressInput)
                         .padding()
                         .background(Color(.systemBackground))
                         .cornerRadius(12)
@@ -82,6 +82,8 @@ struct MapSearchView<ViewModel: MapViewModelProtocol>: View {
             }
         }) {
             FiltersView(searchRadius: $viewModel.searchRadius)
+                .presentationDetents([.medium])
+                .presentationDragIndicator(.visible)
         }
         .onAppear {
             Task {
@@ -109,7 +111,8 @@ struct MapSearchView<ViewModel: MapViewModelProtocol>: View {
             .presentationDragIndicator(.visible)
         }
         .alert(item: $viewModel.alertWrapper) { alert in
-            Alert(title: Text(alert.title), message: Text(alert.message))
+            Alert(title: Text(LocalizedStringKey(alert.title)),
+                  message: Text(LocalizedStringKey(alert.message)))
         }
     }
 }

@@ -1,7 +1,160 @@
 {
   "sourceLanguage" : "en",
+  "version" : "1.0",
   "strings" : {
-
-  },
-  "version" : "1.0"
+    "%0.f m away" : {
+      "en" : "%0.f m away",
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%0.f м від вас"
+          }
+        }
+      }
+    },
+    "Coffee Shops Nearby" : {
+      "en" : "Coffee Shops Nearby",
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Кав'ярні поруч"
+          }
+        }
+      }
+    },
+    "Enter office address…" : {
+      "en" : "Enter office address…",
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Введіть адресу офісу…"
+          }
+        }
+      }
+    },
+    "Filters" : {
+      "en" : "Filters",
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Фільтри"
+          }
+        }
+      }
+    },
+    "Loading nearby coffee shops…" : {
+      "en" : "Loading nearby coffee shops…",
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Завантаження кав'ярень поруч…"
+          }
+        }
+      }
+    },
+    "Location permission denied" : {
+      "en" : "Location permission denied",
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дозвіл на визначення місця розташування відхилено"
+          }
+        }
+      }
+    },
+    "No coffee shops found nearby" : {
+      "en" : "No coffee shops found nearby",
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поруч не знайдено кав'ярень"
+          }
+        }
+      }
+    },
+    "Please enable location services in Settings" : {
+      "en" : "Please enable location services in Settings",
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Будь ласка, увімкніть служби геолокації в Налаштуваннях"
+          }
+        }
+      }
+    },
+    "Rating %.1f" : {
+      "en" : "Rating %.1f",
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Рейтинг %.1f"
+          }
+        }
+      }
+    },
+    "Search Radius" : {
+      "en" : "Search Radius",
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Радіус пошуку"
+          }
+        }
+      }
+    },
+    "Try entering a different location" : {
+      "en" : "Try entering a different location",
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Спробуйте ввести інше місце"
+          }
+        }
+      }
+    },
+    "Unable to find address" : {
+      "en" : "Unable to find address",
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не вдалося знайти адресу"
+          }
+        }
+      }
+    },
+    "%d meters" : {
+      "en" : "%d meters",
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%d метрів"
+          }
+        }
+      }
+    },
+    "Apply" : {
+      "en" : "Apply",
+      "localizations" : {
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Прийняти"
+          }
+        }
+      }
+    }
+  }
 }
