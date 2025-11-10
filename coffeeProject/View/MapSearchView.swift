@@ -10,8 +10,8 @@ struct MapSearchView<ViewModel: MapViewModelProtocol>: View {
     @State private var showCoffeeList = false
     
     init(viewModel: ViewModel) {
-            _viewModel = StateObject(wrappedValue: viewModel)
-        }
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
     
     var body: some View {
         ZStack(alignment: .top) {
@@ -23,25 +23,12 @@ struct MapSearchView<ViewModel: MapViewModelProtocol>: View {
             ) { shop in
                 MapAnnotation(coordinate: shop.coordinate) {
                     
-                    
-                    VStack(spacing: 4) {
-                        Text(shop.name)
-                            .font(.caption2)
-                            .padding(4)
-                            .background(Color(.systemBackground).opacity(0.9))
-                            .cornerRadius(6)
-                        
-                        Image(systemName: viewModel.selectedShop?.id == shop.id ? "mappin.circle" : "mappin.circle.fill")
-                            .font(viewModel.selectedShop?.id == shop.id ? .system(size: 35) : .title2)
-                            .foregroundColor(viewModel.selectedShop?.id == shop.id ? .red : .brown)
-                            .scaleEffect(viewModel.selectedShop?.id == shop.id ? 1.3 : 1.0)
-                            .animation(.spring(), value: viewModel.selectedShop?.id == shop.id)
-                            .onTapGesture {
-                                DispatchQueue.main.async {
-                                    viewModel.selectedShop = shop
-                                    showCoffeeList = true
-                                }
-                            }
+                    MapScreenView(shop: shop,
+                                  isSelected: viewModel.selectedShop?.id == shop.id) {
+                        DispatchQueue.main.async {
+                            viewModel.selectedShop = shop
+                            showCoffeeList = true
+                        }
                     }
                 }
             }
@@ -56,8 +43,8 @@ struct MapSearchView<ViewModel: MapViewModelProtocol>: View {
                         .cornerRadius(12)
                         .shadow(radius: 4)
                         .onSubmit {
-                                Task { await viewModel.searchAddress(addressInput) }
-                            }
+                            Task { await viewModel.searchAddress(addressInput) }
+                        }
                     
                     Button(action: {
                         showFilters.toggle()
@@ -96,7 +83,7 @@ struct MapSearchView<ViewModel: MapViewModelProtocol>: View {
                 showCoffeeList = true
             }
         }
-
+        
         .sheet(isPresented: $showCoffeeList, onDismiss: {
             withAnimation(.spring()){
                 viewModel.selectedShop = nil
