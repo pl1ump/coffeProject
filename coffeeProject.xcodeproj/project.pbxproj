@@ -11,6 +11,7 @@
 		F3905E6F2EC390A70030443A /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3905E6E2EC390A70030443A /* MockURLProtocol.swift */; };
 		F3905E712EC391860030443A /* MockYelpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3905E702EC391860030443A /* MockYelpService.swift */; };
 		F3905E732EC391A50030443A /* MapViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3905E722EC391A50030443A /* MapViewModelTest.swift */; };
+		F3905E772EC3E2200030443A /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3905E762EC3E2200030443A /* SearchBarView.swift */; };
 		F39F50CD2EBE50B900B9C6F3 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F39F50CC2EBE50B900B9C6F3 /* Localizable.xcstrings */; };
 		F3C17E7C2EBA780000E62F6D /* ListSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C17E7B2EBA780000E62F6D /* ListSheetView.swift */; };
 		F3F460D02EB6976D000069CC /* appModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F460CF2EB6976D000069CC /* appModel.swift */; };
@@ -44,6 +45,7 @@
 		F3905E6E2EC390A70030443A /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		F3905E702EC391860030443A /* MockYelpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockYelpService.swift; sourceTree = "<group>"; };
 		F3905E722EC391A50030443A /* MapViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModelTest.swift; sourceTree = "<group>"; };
+		F3905E762EC3E2200030443A /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		F39F50CC2EBE50B900B9C6F3 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		F3C17E7B2EBA780000E62F6D /* ListSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSheetView.swift; sourceTree = "<group>"; };
 		F3F460CC2EB3E6AE000069CC /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				F3F460DE2EB7BFC8000069CC /* FiltersView.swift */,
 				F3C17E7B2EBA780000E62F6D /* ListSheetView.swift */,
 				F3FF9B712EC37F9D00F53C50 /* MapScreenView.swift */,
+				F3905E762EC3E2200030443A /* SearchBarView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				F3F460D62EB69CEC000069CC /* APIErrorResponse.swift in Sources */,
 				F3F460D22EB6995F000069CC /* YelpNetworkManager.swift in Sources */,
 				F3F460D82EB7B6AC000069CC /* MapViewModel.swift in Sources */,
+				F3905E772EC3E2200030443A /* SearchBarView.swift in Sources */,
 				F3FBBEC82EB3AFB30012FABE /* coffeeProjectApp.swift in Sources */,
 				F3C17E7C2EBA780000E62F6D /* ListSheetView.swift in Sources */,
 				F3F460D42EB69B82000069CC /* NetworkError.swift in Sources */,
