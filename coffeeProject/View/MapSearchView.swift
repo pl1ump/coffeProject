@@ -36,12 +36,13 @@ struct MapSearchView<ViewModel: MapViewModelProtocol>: View {
             .ignoresSafeArea()
             
             SearchBarView(adressInput: $adressInput) {
+                showFilters.toggle()
+            } onSubmit: {
                 Task {
                     await viewModel.searchAddress(adressInput)
                 }
-            } onSubmit: {
-                showFilters.toggle()
             }
+
 
             
         }
