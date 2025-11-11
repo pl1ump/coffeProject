@@ -15,12 +15,19 @@ struct SearchBarView: View {
         VStack {
             HStack {
                 TextField(LocalizedStringKey("Enter office address…"), text: $adressInput)
-                    .onChange(of: adressInput) { _, newValue in
-                        adressInput = newValue
-                            .trimmingCharacters(in: .whitespacesAndNewlines)
-                            .replacingOccurrences(of: "  ", with: " ")
-                            .prefix(60)
-                            .description
+                    .onChange(of: adressInput) {_, newValue in
+                        if newValue.first == " " {
+                            adressInput = String(newValue.drop(while: { $0 == " " }))
+                        } else {
+                            var clean = newValue
+                            while clean.contains("  ") {
+                                clean = clean.replacingOccurrences(of: "  ", with: " ")
+                            }
+                            if clean.count > 60 {
+                                clean = String(clean.prefix(60))
+                            }
+                            adressInput = clean
+                        }
                     }
                     .padding()
                     .background(Color(.systemBackground))
