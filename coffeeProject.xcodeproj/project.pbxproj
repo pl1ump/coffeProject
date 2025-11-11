@@ -21,6 +21,7 @@
 		F3FBBECA2EB3AFB30012FABE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FBBEC92EB3AFB30012FABE /* ContentView.swift */; };
 		F3FBBECC2EB3AFB40012FABE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3FBBECB2EB3AFB40012FABE /* Assets.xcassets */; };
 		F3FBBECF2EB3AFB40012FABE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3FBBECE2EB3AFB40012FABE /* Preview Assets.xcassets */; };
+		F3FF9B722EC37F9D00F53C50 /* MapScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FF9B712EC37F9D00F53C50 /* MapScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		F3FBBEC92EB3AFB30012FABE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F3FBBECB2EB3AFB40012FABE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3FBBECE2EB3AFB40012FABE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F3FF9B712EC37F9D00F53C50 /* MapScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				F3F460DC2EB7BF98000069CC /* MapSearchView.swift */,
 				F3F460DE2EB7BFC8000069CC /* FiltersView.swift */,
 				F3C17E7B2EBA780000E62F6D /* ListSheetView.swift */,
+				F3FF9B712EC37F9D00F53C50 /* MapScreenView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				F3F460D02EB6976D000069CC /* appModel.swift in Sources */,
 				F3F460DB2EB7BA04000069CC /* MapViewModelProtocol.swift in Sources */,
 				F3F460DD2EB7BF98000069CC /* MapSearchView.swift in Sources */,
+				F3FF9B722EC37F9D00F53C50 /* MapScreenView.swift in Sources */,
 				F3FBBECA2EB3AFB30012FABE /* ContentView.swift in Sources */,
 				F3F460DF2EB7BFC8000069CC /* FiltersView.swift in Sources */,
 				F3F460D62EB69CEC000069CC /* APIErrorResponse.swift in Sources */,
