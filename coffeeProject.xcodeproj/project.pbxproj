@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F3905E6D2EC3906B0030443A /* YelpNetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3905E6C2EC3906B0030443A /* YelpNetworkManagerTests.swift */; };
+		F3905E6F2EC390A70030443A /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3905E6E2EC390A70030443A /* MockURLProtocol.swift */; };
+		F3905E712EC391860030443A /* MockYelpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3905E702EC391860030443A /* MockYelpService.swift */; };
+		F3905E732EC391A50030443A /* MapViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3905E722EC391A50030443A /* MapViewModelTest.swift */; };
 		F39F50CD2EBE50B900B9C6F3 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F39F50CC2EBE50B900B9C6F3 /* Localizable.xcstrings */; };
 		F3C17E7C2EBA780000E62F6D /* ListSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C17E7B2EBA780000E62F6D /* ListSheetView.swift */; };
 		F3F460D02EB6976D000069CC /* appModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F460CF2EB6976D000069CC /* appModel.swift */; };
@@ -24,7 +28,22 @@
 		F3FF9B722EC37F9D00F53C50 /* MapScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3FF9B712EC37F9D00F53C50 /* MapScreenView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		F3905E642EC38C320030443A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F3FBBEBC2EB3AFB30012FABE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F3FBBEC32EB3AFB30012FABE;
+			remoteInfo = coffeeProject;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		F3905E602EC38C320030443A /* coffeeProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = coffeeProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3905E6C2EC3906B0030443A /* YelpNetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YelpNetworkManagerTests.swift; sourceTree = "<group>"; };
+		F3905E6E2EC390A70030443A /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
+		F3905E702EC391860030443A /* MockYelpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockYelpService.swift; sourceTree = "<group>"; };
+		F3905E722EC391A50030443A /* MapViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModelTest.swift; sourceTree = "<group>"; };
 		F39F50CC2EBE50B900B9C6F3 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		F3C17E7B2EBA780000E62F6D /* ListSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSheetView.swift; sourceTree = "<group>"; };
 		F3F460CC2EB3E6AE000069CC /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
@@ -46,6 +65,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F3905E5D2EC38C320030443A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F3FBBEC12EB3AFB30012FABE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -56,6 +82,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F3905E612EC38C320030443A /* coffeeProjectTests */ = {
+			isa = PBXGroup;
+			children = (
+				F3905E6B2EC38FC20030443A /* Views */,
+				F3905E6A2EC38FB40030443A /* ViewModel */,
+				F3905E692EC38FAA0030443A /* Network */,
+			);
+			path = coffeeProjectTests;
+			sourceTree = "<group>";
+		};
+		F3905E692EC38FAA0030443A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F3905E6C2EC3906B0030443A /* YelpNetworkManagerTests.swift */,
+				F3905E6E2EC390A70030443A /* MockURLProtocol.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		F3905E6A2EC38FB40030443A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F3905E702EC391860030443A /* MockYelpService.swift */,
+				F3905E722EC391A50030443A /* MapViewModelTest.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F3905E6B2EC38FC20030443A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		F3F460C82EB3E311000069CC /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				F3FBBEC62EB3AFB30012FABE /* coffeeProject */,
+				F3905E612EC38C320030443A /* coffeeProjectTests */,
 				F3FBBEC52EB3AFB30012FABE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -114,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				F3FBBEC42EB3AFB30012FABE /* coffeeProject.app */,
+				F3905E602EC38C320030443A /* coffeeProjectTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -147,6 +210,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		F3905E5F2EC38C320030443A /* coffeeProjectTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3905E682EC38C320030443A /* Build configuration list for PBXNativeTarget "coffeeProjectTests" */;
+			buildPhases = (
+				F3905E5C2EC38C320030443A /* Sources */,
+				F3905E5D2EC38C320030443A /* Frameworks */,
+				F3905E5E2EC38C320030443A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F3905E652EC38C320030443A /* PBXTargetDependency */,
+			);
+			name = coffeeProjectTests;
+			productName = coffeeProjectTests;
+			productReference = F3905E602EC38C320030443A /* coffeeProjectTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		F3FBBEC32EB3AFB30012FABE /* coffeeProject */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F3FBBED22EB3AFB40012FABE /* Build configuration list for PBXNativeTarget "coffeeProject" */;
@@ -174,6 +255,10 @@
 				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
+					F3905E5F2EC38C320030443A = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = F3FBBEC32EB3AFB30012FABE;
+					};
 					F3FBBEC32EB3AFB30012FABE = {
 						CreatedOnToolsVersion = 15.4;
 					};
@@ -193,11 +278,19 @@
 			projectRoot = "";
 			targets = (
 				F3FBBEC32EB3AFB30012FABE /* coffeeProject */,
+				F3905E5F2EC38C320030443A /* coffeeProjectTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F3905E5E2EC38C320030443A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F3FBBEC22EB3AFB30012FABE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -211,6 +304,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F3905E5C2EC38C320030443A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3905E732EC391A50030443A /* MapViewModelTest.swift in Sources */,
+				F3905E6F2EC390A70030443A /* MockURLProtocol.swift in Sources */,
+				F3905E712EC391860030443A /* MockYelpService.swift in Sources */,
+				F3905E6D2EC3906B0030443A /* YelpNetworkManagerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F3FBBEC02EB3AFB30012FABE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -232,7 +336,59 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		F3905E652EC38C320030443A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F3FBBEC32EB3AFB30012FABE /* coffeeProject */;
+			targetProxy = F3905E642EC38C320030443A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		F3905E662EC38C320030443A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3VS5PSVZBG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = meToo.coffeeProjectTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/coffeeProject.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/coffeeProject";
+			};
+			name = Debug;
+		};
+		F3905E672EC38C320030443A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3VS5PSVZBG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = meToo.coffeeProjectTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/coffeeProject.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/coffeeProject";
+			};
+			name = Release;
+		};
 		F3FBBED02EB3AFB40012FABE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F3F460CC2EB3E6AE000069CC /* Config.xcconfig */;
@@ -419,6 +575,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F3905E682EC38C320030443A /* Build configuration list for PBXNativeTarget "coffeeProjectTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3905E662EC38C320030443A /* Debug */,
+				F3905E672EC38C320030443A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F3FBBEBF2EB3AFB30012FABE /* Build configuration list for PBXProject "coffeeProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -9,7 +9,8 @@ protocol YelpService {
 
 class YelpNetworkManager: YelpService {
     private let apiKey: String
-    init(apiKey: String? = nil) {
+    private let session: URLSession
+    init(apiKey: String? = nil, session: URLSession = .shared) {
         if let key = apiKey {
             self.apiKey = key
         } else {
@@ -18,11 +19,12 @@ class YelpNetworkManager: YelpService {
             }
             self.apiKey = key
         }
+        self.session = session
     }
     
     private func fetchData(with request: URLRequest) async throws -> Data {
         do {
-            let (data, response) = try await URLSession.shared.data(for: request)
+            let (data, response) = try await session.data(for: request)
             
             guard let httpResponse = response as? HTTPURLResponse else {
                 throw NetworkError.noData

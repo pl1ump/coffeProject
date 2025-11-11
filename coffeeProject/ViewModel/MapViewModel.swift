@@ -19,11 +19,11 @@ final class MapViewModel: NSObject, MapViewModelProtocol {
     @Published var selectedShop: Business?
     
     // MARK: - Dependencies
-    private let service: YelpNetworkManager
+    private let service: YelpService
     private let locationManager = CLLocationManager()
     
     // MARK: - Init network manager
-    init(service: YelpNetworkManager) {
+    init(service: YelpService) {
         self.service = service
         self.searchRadius = UserDefaults.standard.integer(forKey: "searchRadius")
         super.init()
