@@ -38,7 +38,7 @@ final class YelpNetworkManagerTests: XCTestCase {
                     "phone": "123456",
                     "distance": 120.5,
                     "categories": [],
-                    "coordinates": {
+                    "baseCoordinates": {
                         "latitude": 37.77,
                         "longitude": -122.41
                     },
