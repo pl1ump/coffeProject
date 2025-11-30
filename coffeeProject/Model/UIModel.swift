@@ -1,8 +1,15 @@
-//
-//  UIModel.swift
-//  coffeeProject
-//
-//  Created by Vladick  on 30/11/2025.
-//
-
 import Foundation
+import MapKit
+
+
+struct CoffeShopViewData {
+    let id: String
+    let name: String
+    let coordinate: CLLocationCoordinate2D
+    let distanceText: String?
+    let imageURL: URL?
+    let rating: Double?
+    let reviewCount: Int?
+    let photos: [String]?
+    let location: Location
+}
