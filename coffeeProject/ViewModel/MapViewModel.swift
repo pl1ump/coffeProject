@@ -16,7 +16,7 @@ final class MapViewModel: NSObject, MapViewModelProtocol {
         }
     }
     @Published var alertWrapper: AlertWrapper? = nil
-    @Published var selectedShop: Business?
+    @Published var selectedShop: CoffeShopViewData?
     
     // MARK: - Dependencies
     private let service: YelpService
@@ -93,7 +93,7 @@ final class MapViewModel: NSObject, MapViewModelProtocol {
             id: business.id,
             name: business.name,
             coordinate: business.coordinate,
-            distanceText: business.distance.map { "\($0 / 1000) km" },
+            distance: business.distance,
             imageURL: business.imageUrl.flatMap(URL.init(string:)),
             rating: business.rating,
             reviewCount: business.reviewCount,

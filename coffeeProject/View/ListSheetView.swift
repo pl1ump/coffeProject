@@ -2,13 +2,14 @@ import SwiftUI
 
 struct ListSheetView<ViewModel: MapViewModelProtocol>: View {
     @ObservedObject var viewModel: ViewModel
-    let selectedShop: Business?
+    let selectedShop: CoffeShopViewData?
     
     var body: some View {
         ScrollViewReader { proxy in
             ScrollView {
                 VStack(spacing: 16) {
                     Spacer().frame(height: 16)
+                    
                     ForEach(sortedShops) { shop in
                         VStack(alignment: .leading, spacing: 8) {
                             
@@ -16,8 +17,8 @@ struct ListSheetView<ViewModel: MapViewModelProtocol>: View {
                                 .font(.headline)
                             
                             
-                            if let url = shop.imageUrl, let imageURL = URL(string: url) {
-                                AsyncImage(url: imageURL) { phase in
+                            if let url = shop.imageURL {
+                                AsyncImage(url: url) { phase in
                                     switch phase {
                                     case .success(let img):
                                         img.resizable().scaledToFill()
@@ -31,7 +32,7 @@ struct ListSheetView<ViewModel: MapViewModelProtocol>: View {
                             
                             
                             if let distance = shop.distance {
-                                Text(String(format: NSLocalizedString("%0.f m away", comment: ""), distance))
+                                Text(String(format: NSLocalizedString("%.0f m away", comment: ""), distance))
                                     .font(.subheadline)
                                     .foregroundColor(.secondary)
                             }
@@ -78,7 +79,7 @@ struct ListSheetView<ViewModel: MapViewModelProtocol>: View {
     }
     
     
-    private var sortedShops: [Business] {
+    private var sortedShops: [CoffeShopViewData] {
         guard let selected = selectedShop else { return viewModel.coffeeShops }
         return [selected] + viewModel.coffeeShops.filter { $0.id != selected.id }
     }
@@ -87,3 +88,5 @@ struct ListSheetView<ViewModel: MapViewModelProtocol>: View {
 #Preview {
     ListSheetView(viewModel: MapViewModel(service: YelpNetworkManager()), selectedShop: .preview)
 }
+
+
