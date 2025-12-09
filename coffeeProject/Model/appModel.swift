@@ -94,25 +94,40 @@ struct AlertWrapper: Identifiable {
     let message: String
 }
 
-// MARK: - Preview extention
 #if DEBUG
+import CoreLocation
+
 extension Business {
     static let preview: Business = Business(
         id: "preview-id",
         name: "Preview Coffee Shop",
         imageUrl: "https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg",
-        url: nil,
+        url: URL(string: "https://example.com"),
         rating: 4.7,
         reviewCount: 120,
         price: "$$",
-        phone: "+15550123456",
-        distance: 120,
-        categories: [],
-        baseCoordinates: Coordinate(latitude: 37.7749, longitude: -122.4194),
-        location: Location(address1: "Market St", address2: nil, address3: nil, city: "San Francisco", state: "CA", zipCode: "94103", country: "USA"),
+        phone: "+1 123-456-7890",
+        distance: 120.0,
+        categories: [
+            Category(
+                alias: "coffee",
+                title: "Coffee & Tea"
+            )
+        ],
+        baseCoordinates: Coordinate(
+            latitude: 37.7749,
+            longitude: -122.4194
+        ),
+        location: Location(
+            address1: "Market St",
+            address2: nil,
+            address3: nil,
+            city: "San Francisco",
+            state: "CA",
+            zipCode: "94103",
+            country: "USA"
+        ),
         photos: []
     )
 }
 #endif
-
-
