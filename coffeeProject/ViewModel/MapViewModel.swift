@@ -5,7 +5,7 @@ import MapKit
 @MainActor
 final class MapViewModel: NSObject, MapViewModelProtocol {
     
-    @Published var coffeeShops: [CoffeShopViewData] = []
+    @Published var coffeeShops: [Business] = []
     @Published var userLocation: CLLocationCoordinate2D?
     @Published var region = MKCoordinateRegion()
     @Published var isLoading = false
@@ -16,7 +16,7 @@ final class MapViewModel: NSObject, MapViewModelProtocol {
         }
     }
     @Published var alertWrapper: AlertWrapper? = nil
-    @Published var selectedShop: CoffeShopViewData?
+    @Published var selectedShop: Business?
     
     // MARK: - Dependencies
     private let service: YelpService
@@ -50,11 +50,8 @@ final class MapViewModel: NSObject, MapViewModelProtocol {
                 radius: searchRadius,
                 limit: 20
             )
-            
-            let viewData = shops.map { mapToViewData(from: $0) }
-            
             await MainActor.run {
-                self.coffeeShops = viewData
+                self.coffeeShops = shops
             }
             
         } catch {
@@ -86,20 +83,6 @@ final class MapViewModel: NSObject, MapViewModelProtocol {
         } catch {
             errorMessage = "Address not found"
         }
-    }
-    
-    func mapToViewData(from business: Business) -> CoffeShopViewData {
-        CoffeShopViewData(
-            id: business.id,
-            name: business.name,
-            coordinate: business.coordinate,
-            distance: business.distance,
-            imageURL: business.imageUrl.flatMap(URL.init(string:)),
-            rating: business.rating,
-            reviewCount: business.reviewCount,
-            photos: business.photos,
-            location: business.location
-        )
     }
     
     func showError(_ message: String) {

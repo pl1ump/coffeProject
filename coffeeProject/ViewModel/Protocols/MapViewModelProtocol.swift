@@ -4,14 +4,14 @@ import MapKit
 
 @MainActor
 protocol MapViewModelProtocol: ObservableObject {
-    var coffeeShops: [CoffeShopViewData] { get }
+    var coffeeShops: [Business] { get }
     var userLocation: CLLocationCoordinate2D? { get }
     var region: MKCoordinateRegion { get set }
     var isLoading: Bool { get }
     var errorMessage: String? { get }
     var searchRadius: Int { get set }
     var alertWrapper: AlertWrapper? { get set }
-    var selectedShop: CoffeShopViewData? { get set }
+    var selectedShop: Business? { get set }
 
     func requestLocationPermission()
     func searchAddress(_ address: String) async

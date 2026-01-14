@@ -19,7 +19,7 @@ struct Business: Identifiable, Decodable {
     let phone: String?
     let distance: Double?
     let categories: [Category]
-    let baseCoordinates: Coordinate
+    let coordinates: Coordinate
     let location: Location
     let photos: [String]?
     
@@ -34,7 +34,7 @@ struct Business: Identifiable, Decodable {
         case phone
         case distance
         case categories
-        case baseCoordinates
+        case coordinates
         case location
         case photos
         
@@ -42,8 +42,8 @@ struct Business: Identifiable, Decodable {
     
     
     var coordinate: CLLocationCoordinate2D {
-        CLLocationCoordinate2D(latitude: baseCoordinates.latitude,
-                               longitude: baseCoordinates.longitude)
+        CLLocationCoordinate2D(latitude: coordinates.latitude,
+                               longitude: coordinates.longitude)
     }
 }
 
@@ -94,40 +94,25 @@ struct AlertWrapper: Identifiable {
     let message: String
 }
 
+// MARK: - Preview extention
 #if DEBUG
-import CoreLocation
-
 extension Business {
     static let preview: Business = Business(
         id: "preview-id",
         name: "Preview Coffee Shop",
         imageUrl: "https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg",
-        url: URL(string: "https://example.com"),
+        url: nil,
         rating: 4.7,
         reviewCount: 120,
         price: "$$",
-        phone: "+1 123-456-7890",
-        distance: 120.0,
-        categories: [
-            Category(
-                alias: "coffee",
-                title: "Coffee & Tea"
-            )
-        ],
-        baseCoordinates: Coordinate(
-            latitude: 37.7749,
-            longitude: -122.4194
-        ),
-        location: Location(
-            address1: "Market St",
-            address2: nil,
-            address3: nil,
-            city: "San Francisco",
-            state: "CA",
-            zipCode: "94103",
-            country: "USA"
-        ),
+        phone: "+15550123456",
+        distance: 120,
+        categories: [],
+        coordinates: Coordinate(latitude: 37.7749, longitude: -122.4194),
+        location: Location(address1: "Market St", address2: nil, address3: nil, city: "San Francisco", state: "CA", zipCode: "94103", country: "USA"),
         photos: []
     )
 }
 #endif
+
+

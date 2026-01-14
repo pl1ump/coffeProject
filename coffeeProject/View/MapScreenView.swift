@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MapScreenView: View {
-    let shop: CoffeShopViewData
+    let shop: Business
     let isSelected: Bool
     let onTap: () -> Void
     
