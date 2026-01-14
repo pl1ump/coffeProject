@@ -19,7 +19,7 @@ struct Business: Identifiable, Decodable {
     let phone: String?
     let distance: Double?
     let categories: [Category]
-    let baseCoordinates: Coordinate
+    let coordinates: Coordinate
     let location: Location
     let photos: [String]?
     
@@ -34,7 +34,7 @@ struct Business: Identifiable, Decodable {
         case phone
         case distance
         case categories
-        case baseCoordinates
+        case coordinates
         case location
         case photos
         
@@ -42,8 +42,8 @@ struct Business: Identifiable, Decodable {
     
     
     var coordinate: CLLocationCoordinate2D {
-        CLLocationCoordinate2D(latitude: baseCoordinates.latitude,
-                               longitude: baseCoordinates.longitude)
+        CLLocationCoordinate2D(latitude: coordinates.latitude,
+                               longitude: coordinates.longitude)
     }
 }
 
@@ -108,7 +108,7 @@ extension Business {
         phone: "+15550123456",
         distance: 120,
         categories: [],
-        baseCoordinates: Coordinate(latitude: 37.7749, longitude: -122.4194),
+        coordinates: Coordinate(latitude: 37.7749, longitude: -122.4194),
         location: Location(address1: "Market St", address2: nil, address3: nil, city: "San Francisco", state: "CA", zipCode: "94103", country: "USA"),
         photos: []
     )

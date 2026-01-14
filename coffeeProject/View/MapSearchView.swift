@@ -15,51 +15,79 @@ struct MapSearchView<ViewModel: MapViewModelProtocol>: View {
     
     var body: some View {
         ZStack(alignment: .top) {
-
-            MapView
-            SearchBar
-                
-        }.mapSheetModifier(viewModel: viewModel,
-                           showFilters: $showFilters,
-                           showCoffeeList: $showCoffeeList,
-                           previousRadius: $previousRadius)
-        
-    }
-    
-    private var MapView: some View {
-        Map(
-            coordinateRegion: $viewModel.region,
-            showsUserLocation: true,
-            annotationItems: viewModel.coffeeShops
-        ) { shop in
-            MapAnnotation(coordinate: shop.coordinate) {
-                MapScreenView(
-                    shop: shop,
-                    isSelected: viewModel.selectedShop?.id == shop.id
-                ) {
-                    DispatchQueue.main.async {
-                        viewModel.selectedShop = shop
-                        showCoffeeList = true
+            
+            Map(
+                coordinateRegion: $viewModel.region,
+                showsUserLocation: true,
+                annotationItems: viewModel.coffeeShops
+            ) { shop in
+                MapAnnotation(coordinate: shop.coordinate) {
+                    MapScreenView(
+                        shop: shop,
+                        isSelected: viewModel.selectedShop?.id == shop.id
+                    ) {
+                        DispatchQueue.main.async {
+                            viewModel.selectedShop = shop
+                            showCoffeeList = true
+                        }
                     }
                 }
             }
+            .ignoresSafeArea()
+            
+            SearchBarView(adressInput: $adressInput) {
+                showFilters.toggle()
+            } onSubmit: {
+                Task {
+                    await viewModel.searchAddress(adressInput)
+                }
+            }
+
+
+            
         }
-        .ignoresSafeArea()
-    }
-    
-    private var SearchBar: some View {
-        SearchBarView(adressInput: $adressInput) {
-            showFilters.toggle()
-        } onSubmit: {
+        .sheet(isPresented: $showFilters, onDismiss: {
+            if viewModel.searchRadius != previousRadius {
+                previousRadius = viewModel.searchRadius
+                Task { await viewModel.loadCoffeeShops() }
+            }
+        }) {
+            FiltersView(searchRadius: $viewModel.searchRadius)
+                .presentationDetents([.medium])
+                .presentationDragIndicator(.visible)
+        }
+        .onAppear {
             Task {
-                await viewModel.searchAddress(adressInput)
+                previousRadius = viewModel.searchRadius
+                viewModel.requestLocationPermission()
             }
         }
+        .task {
+            if !viewModel.coffeeShops.isEmpty {
+                showCoffeeList = true
+            }
+        }
+        
+        .sheet(isPresented: $showCoffeeList, onDismiss: {
+            withAnimation(.spring()){
+                viewModel.selectedShop = nil
+            }
+            
+        }) {
+            ListSheetView(
+                viewModel: viewModel,
+                selectedShop: viewModel.selectedShop
+            )
+            .presentationDetents([.fraction(0.2), .medium, .large])
+            .presentationDragIndicator(.visible)
+        }
+        .alert(item: $viewModel.alertWrapper) { alert in
+            Alert(title: Text(LocalizedStringKey(alert.title)),
+                  message: Text(LocalizedStringKey(alert.message)))
+        }
     }
-    
-    
-    
 }
+
 
 #Preview {
     MapSearchView(viewModel: MapViewModel(service: YelpNetworkManager()))
