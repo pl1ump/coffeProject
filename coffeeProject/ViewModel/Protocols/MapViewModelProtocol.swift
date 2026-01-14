@@ -4,7 +4,7 @@ import MapKit
 
 @MainActor
 protocol MapViewModelProtocol: ObservableObject {
-    var coffeeShops: [CoffeShopViewData] { get }
+    var coffeeShops: [Business] { get }
     var userLocation: CLLocationCoordinate2D? { get }
     var region: MKCoordinateRegion { get set }
     var isLoading: Bool { get }
